@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "yauza"
+version = "0.1.0"
+description = "pyqt gui 81-720 subway train simulator"
+authors = ["lindy2076 <kakaporuqee@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+PyQt6 = "^6.5.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+flake8 = "^6.1.0"
+pytest-qt = "^4.2.0"
+
+[tool.poetry.scripts]
+letsgo = "yauza.main:go"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

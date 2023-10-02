@@ -6,6 +6,10 @@ from PyQt6.QtCore import pyqtSignal, QTimer
 from yauza.train import Yauza
 
 
+class myLabel(QLabel):
+    pass
+
+
 class KVRVButton(QPushButton):
     kv_move = pyqtSignal(int)
 
@@ -41,15 +45,15 @@ class MainWindow(QWidget):
 
         container = QGridLayout(self)
 
-        self.speed_indicator = QLabel()
+        self.speed_indicator = myLabel()
         self.update_speed()
         train.speed_changed_SIG.connect(self.update_speed)
 
-        self.KV_indicator = QLabel()
+        self.KV_indicator = myLabel()
         self.update_KV()
         train.kv_changed_SIG.connect(self.update_KV)
 
-        self.RV_indicator = QLabel()
+        self.RV_indicator = myLabel()
         self.update_RV()
         train.rv_changed_SIG.connect(self.update_RV)
 
@@ -73,7 +77,7 @@ class MainWindow(QWidget):
         container.addWidget(self.B_rv_forward, 1, 2)
         container.addWidget(self.B_rv_back, 2, 2)
 
-        self.err_label = QLabel()
+        self.err_label = myLabel()
         self.update_err("None")
         train.rv_0_SIG.connect(self.update_err)
         train.kv_not_0_SIG.connect(self.update_err)

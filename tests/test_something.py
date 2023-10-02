@@ -4,6 +4,7 @@ from yauza.gui.widgets import MainWindow
 from yauza.gui.app import App
 from yauza.train import Yauza 
 
+
 @pytest.fixture
 def train():
     return Yauza()
